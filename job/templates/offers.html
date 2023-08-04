@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin-top: 200px; margin-bottom: 300px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Trending Jobs at Companies</h1>
+            <hr>
+            <div class="row">
+                {% for item in category %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="card-images">
+                                <img src="{{ item.image.url }}" alt="company image" height="80" width="180">
+                            </div>
+                            <h6> {{ item.title }} </h6>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{{ category }}
+
+{% endblock %}
